@@ -33,6 +33,7 @@ function create() {
     game.stage.backgroundColor = '#2d2d2d';
 
     player = game.add.sprite(0, 0, 'dude');
+    game.camera.follow(player);
 
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
@@ -54,7 +55,7 @@ function create() {
 
     //  Resize the world
     layer1.resizeWorld();
-
+    map.setCollisionBetween(0, 5, true, layer1)
     layer2 = map.createBlankLayer('level2', 40, 30, 32, 32);
     layer2.scrollFactorX = 0.8;
     layer2.scrollFactorY = 0.8;
@@ -140,7 +141,10 @@ function updateMarker() {
 }
 
 function update() {
+
+    game.physics.arcade.collide(player, layer1);
     var animation = 'none'
+
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
     player.body.velocity.y = 0;
