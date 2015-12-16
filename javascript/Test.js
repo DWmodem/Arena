@@ -33,7 +33,7 @@ function create() {
     game.stage.backgroundColor = '#2d2d2d';
 
     player = game.add.sprite(0, 0, 'dude');
-    player2 = game.add.sprite(0, 300, 'dude');
+    player2 = game.add.sprite(0, 500, 'dude');
     game.camera.follow(player);
 
     game.physics.arcade.enable(player);
