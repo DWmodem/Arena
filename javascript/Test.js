@@ -32,6 +32,8 @@ function create() {
 
     game.stage.backgroundColor = '#2d2d2d';
 
+    //Crée un groupe local pour les person
+
     player = game.add.sprite(0, 0, 'dude');
     player2 = game.add.sprite(100, 0, 'dude');
     game.camera.follow(player);
